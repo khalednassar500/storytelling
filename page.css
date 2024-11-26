@@ -393,32 +393,64 @@ main .card:nth-child(even) {
   #desktop_cards {
     display: none;
   }
+  body::after {
+    opacity: 0.2;
+  }
+
+  #mobile_cards .card {
+    background-color: rgba(255, 255, 255, 0.7);
+    position: relative;
+  }
+  #mobile_cards .card p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  #mobile_cards .card .card_img {
+    z-index: -1;
+    opacity: 0.3;
+    position: sticky;
+    top: 40vh;
+    transform: translateZ(0);
+  }
+
+  #mobile_cards .card img {
+    animation: im 8s infinite linear alternate;
+  }
+  @keyframes im {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    25% {
+      transform: scale(1.2) rotate(10deg);
+    }
+    75% {
+      transform: scale(1) rotate(-0deg);
+    }
+    100% {
+      transform: scale(1.2) rotate(-10deg);
+    }
+  }
 
   #mobile_cards {
-    display: flex;
-    align-items: flex-start;
+    display: block;
+    /* align-items: flex-start;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
     gap: 25px;
-    margin: 25px;
+    margin: 25px; */
   }
   /* width */
-  #mobile_cards::-webkit-scrollbar {
+  /* #mobile_cards::-webkit-scrollbar {
     opacity: 0;
   }
-
-  /* Track */
   #mobile_cards::-webkit-scrollbar-track {
     opacity: 0;
   }
-
-  /* Handle */
   #mobile_cards::-webkit-scrollbar-thumb {
     opacity: 0;
   }
-
-  /* Handle on hover */
   #mobile_cards::-webkit-scrollbar-thumb:hover {
     opacity: 0;
   }
@@ -490,7 +522,7 @@ main .card:nth-child(even) {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(7.6px);
     -webkit-backdrop-filter: blur(7.6px);
-  }
+  } */
 }
 @media screen and (max-width: 600px) {
   header h1 {
