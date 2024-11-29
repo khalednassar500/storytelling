@@ -152,3 +152,18 @@ scroll_points.appendChild(points_fragement);
 all_text.forEach((text, i) => {
   return observer("text", 1, i).observe(text);
 });
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
+  ) {
+    document.querySelector(".scroll_icon").style.display = "flex";
+  } else {
+    document.querySelector(".scroll_icon").style.display = "none";
+  }
+}
